@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import PropTypes from 'prop-types';
 
 // material-ui
@@ -9,6 +10,9 @@ import LogoSection from '../LogoSection';
 import SearchSection from './SearchSection';
 import ProfileSection from './ProfileSection';
 import NotificationSection from './NotificationSection';
+
+//logo
+import portal from '../../../assets/images/logo.png';
 
 // assets
 import { IconMenu2 } from '@tabler/icons';
@@ -23,17 +27,23 @@ const Header = ({ handleLeftDrawerToggle }) => {
             {/* logo & toggler button */}
             <Box
                 sx={{
-                    width: 228,
+                    width: 190,
+                    height: 80,
                     display: 'flex',
                     [theme.breakpoints.down('md')]: {
-                        width: 'auto'
+                        width: '100%'
                     }
                 }}
             >
-                <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
-                    <LogoSection />
-                </Box>
-                <ButtonBase sx={{ borderRadius: '12px', overflow: 'hidden' }}>
+                <Box
+                    sx={{
+                        flexGrow: 1,
+                        backgroundImage: `url(${portal})`,
+                        backgroundSize: '40%',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                ></Box>
+                <ButtonBase sx={{ borderRadius: '12px' }}>
                     <Avatar
                         variant="rounded"
                         sx={{
